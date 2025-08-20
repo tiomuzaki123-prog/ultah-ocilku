@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffd6e7">
+  <title>Happy Birthday Citra — Soft Pink</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Password Gate (center-top, heart-lock) -->
+  <div id="gate" class="gate" aria-labelledby="gate-title">
+    <div class="gate-bg">
+      <div class="heart h1"></div><div class="heart h2"></div><div class="heart h3"></div>
+      <div class="heart h4"></div><div class="heart h5"></div>
+    </div>
+    <div class="gate-card">
+      <div class="lock" id="lock">
+        <svg class="lock-svg" viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ffb3cf"/>
+              <stop offset="100%" stop-color="#ffd6e7"/>
+            </linearGradient>
+          </defs>
+          <path class="body" d="M60 98 C40 82,16 68,16 44 C16 31,26 22,38 22 c10 0,16 6,22 12 c6-6,12-12,22-12 c12 0,22 9,22 22 c0 24-24 38-44 54z"/>
+          <path class="shackle" d="M60 30 c0-12 10-22 22-22 s22 10 22 22" fill="none"/>
+          <circle class="key" cx="60" cy="60" r="6"/>
+          <rect class="key-slot" x="58.5" y="65" width="3" height="10" rx="2"/>
+        </svg>
+      </div>
+      <h1 id="gate-title">Surprise Buat Citra Cantikku🎀</h1>
+      <p class="muted">Masukkan passwordnya babeee</p>
+      <form id="gate-form" class="gate-form" autocomplete="off">
+        <input id="gate-pw" type="password" inputmode="text" placeholder="Password" aria-label="Password">
+        <button class="btn" type="submit">Buka</button>
+        <button type="button" class="btn eye" id="toggle-eye" aria-label="Lihat/Sembunyikan">👁️</button>
+      </form>
+      <p id="gate-msg" class="gate-msg" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Main Card -->
+  <main class="wrap" id="main" hidden>
+    <section class="card" aria-label="Kartu Ucapan Ulang Tahun">
+      <div class="badge">Happy Birthday</div>
+
+      <!-- Subtle pink balloons -->
+      <div class="balloons" aria-hidden="true" id="balloons"></div>
+
+      <!-- Plushies -->
+      <img src="assets/trex.png" alt="Boneka T-rex" class="plush trex" loading="eager">
+      <img src="assets/bear.png" alt="Boneka beruang" class="plush bear" loading="eager">
+
+      <h1 class="title">Selamat Ulang Tahun Cantikku Sayanggg 🎂✨</h1>
+      <p class="subtitle scroll-anim">Semoga harimu super manis seperti dirimu yg sangat manis 💖</p>
+
+      <!-- Fixed photo with AUTO-FIT frame (smaller) -->
+      <div class="photo-box scroll-anim">
+        <img src="assets/citra.jpg" alt="Foto Citra">
+        <div class="flowers" id="flowers" aria-hidden="true"></div>
+        <!-- decorative corners -->
+        <svg class="deco deco-tl" viewBox="0 0 60 60" aria-hidden="true">
+          <path d="M6 34 C6 18,18 6,34 6" fill="none" stroke="url(#dgrad)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M18 18 Q22 14 26 18 Q22 22 18 18 Z" fill="#ffb3cf" opacity="0.9"/>
+          <circle cx="14" cy="26" r="3" fill="#ffcfe1"/>
+          <defs><linearGradient id="dgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffb3cf"/><stop offset="100%" stop-color="#ffd6e7"/></linearGradient></defs>
+        </svg>
+        <svg class="deco deco-tr" viewBox="0 0 60 60" aria-hidden="true">
+          <path d="M26 6 C42 6,54 18,54 34" fill="none" stroke="url(#dgrad2)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M38 18 Q42 14 46 18 Q42 22 38 18 Z" fill="#ffb3cf" opacity="0.9"/>
+          <circle cx="46" cy="26" r="3" fill="#ffcfe1"/>
+          <defs><linearGradient id="dgrad2" x1="1" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffb3cf"/><stop offset="100%" stop-color="#ffd6e7"/></linearGradient></defs>
+        </svg>
+        <svg class="deco deco-bl" viewBox="0 0 60 60" aria-hidden="true">
+          <path d="M6 26 C6 42,18 54,34 54" fill="none" stroke="url(#dgrad3)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M18 42 Q22 38 26 42 Q22 46 18 42 Z" fill="#ffb3cf" opacity="0.9"/>
+          <circle cx="14" cy="34" r="3" fill="#ffcfe1"/>
+          <defs><linearGradient id="dgrad3" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#ffb3cf"/><stop offset="100%" stop-color="#ffd6e7"/></linearGradient></defs>
+        </svg>
+        <svg class="deco deco-br" viewBox="0 0 60 60" aria-hidden="true">
+          <path d="M26 54 C42 54,54 42,54 26" fill="none" stroke="url(#dgrad4)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M38 42 Q42 38 46 42 Q42 46 38 42 Z" fill="#ffb3cf" opacity="0.9"/>
+          <circle cx="46" cy="34" r="3" fill="#ffcfe1"/>
+          <defs><linearGradient id="dgrad4" x1="1" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#ffb3cf"/><stop offset="100%" stop-color="#ffd6e7"/></linearGradient></defs>
+        </svg>
+      </div>
+
+      <p class="message scroll-anim" id="message">
+Haloo Citra sayangku yang paling bikin aku kangen tiap detik 😘
+
+Hari ini dunia jadi lebih indah, soalnya orang tercantik kesayanganku ulang tahun. Aku gak tahu harus mulai dari mana, yang jelas aku bersyukur banget bisa punya kamu di hidupku.
+Aku cuma mau kamu tahu, kamu itu alasan aku semangat tiap hari. Senyummu bikin capekku hilang, suaramu bikin hatiku tenang, dan cintamu bikin aku ngerasa lengkap.
+Doaku buatmu simpel aja: semoga apa pun yang kamu pengen bisa tercapai, semoga langkahmu selalu dilindungi, dan semoga aku selalu jadi orang yang bikin kamu ketawa di saat lagi sedih.
+Aku janji bakal nemenin kamu terus, baik pas senang maupun pas lagi susah. Aku cinta kamu cantikkuu lebih dari yang bisa aku tulis di ucapan panjang kayak gini 😘💖
+Pokoknya aku doain kamu bahagia terus, sehat selalu, dan semoga kita makin lengket kayak lem UHU ✨
+Love youuu babee😘❤️
+      </p>
+      <div class="sig scroll-anim">— Dari Tio Kesayanganmu</div>
+      <div class="date" id="date"></div>
+
+      <div class="actions scroll-anim">
+        <button class="btn" id="btn-confetti">🎉 Rayakan</button>
+        <button class="btn secondary" onclick="window.print()">🖨️ Cetak</button>
+      </div>
+    </section>
+  </main>
+
+  <canvas id="confettiCanvas" class="confetti"></canvas>
+  <script src="script.js"></script>
+
+  <!-- Cake overlay (click to blow out) -->
+  <div class="cake-overlay" id="cakeOverlay" aria-hidden="true">
+    <div class="cake-wrap" role="dialog" aria-label="Kue ulang tahun — klik untuk meniup lilin">
+      <div class="cake">
+        <div class="cake-layer top"></div>
+        <div class="cake-layer mid"></div>
+        <div class="cake-layer bottom"></div>
+        <div class="plate"></div>
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+        <div class="sprinkle s1"></div>
+        <div class="sprinkle s2"></div>
+        <div class="sprinkle s3"></div>
+        <div class="sprinkle s4"></div>
+      </div>
+      <div class="tip">Klik kuenya buat niup lilinnya sayangg 🎂</div>
+    </div>
+  </div>
+
+</body>
+</html>
